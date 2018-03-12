@@ -1,1 +1,1 @@
-# Algoritmos-An-lisis-y-m-todos-num-ricos
+# Algoritmos-Análisis y métodos numéricos
