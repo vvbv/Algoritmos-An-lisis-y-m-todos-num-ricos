@@ -14,7 +14,7 @@ class Metodos{
         ~Metodos();
         void biseccion( double a, double b, int particiones, double error, double admisibilidad_epsilon );
         void newton_rapson( double x_previo, int iteraciones );
-        
+        void secante( double a, double b, double particiones, double delta, double error );
 
 };
 

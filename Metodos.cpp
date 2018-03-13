@@ -58,3 +58,38 @@ void Metodos::newton_rapson( double x_previo, int iteraciones ){
         newton_rapson( resultado_iteracion, iteraciones - 1 );
     }
 };
+
+//Funcion x² - 5
+void Metodos::secante( double a, double b, double particiones, double delta, double error ){
+
+    double ax = a;
+    double bx = b;
+    double a_evaluado = (ax * ax) - 5;
+    double b_evaluado = ( bx * bx ) - 5;
+    
+    cout << " Intervalo #1 [" << ax << ", " << a_evaluado << "]" << endl;
+    cout << " Intervalo #2 [" << bx << ", " << b_evaluado << "]" << endl;
+
+    for( int x = 0; x < particiones; x++ ){
+        
+        if( abs( a_evaluado ) < abs( b_evaluado ) ){
+
+            double tmp;
+            tmp = ax;
+            ax = bx;
+            bx = tmp;
+
+        }
+
+        double s = (b - a)/(b_evaluado - a_evaluado);
+        a = bx;
+        a_evaluado = b_evaluado;
+        b = bx - (s * b_evaluado);
+        b_evaluado = (bx * bx) - 5;  
+
+        cout << " Intervalo #1 [" << ax << ", " << a_evaluado << "]" << endl;
+        cout << " Intervalo #2 [" << bx << ", " << b_evaluado << "]" << endl;
+
+    };
+
+};
