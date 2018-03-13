@@ -13,7 +13,8 @@ class Metodos{
         Metodos();
         ~Metodos();
         void biseccion( double a, double b, int particiones, double error, double admisibilidad_epsilon );
-        void newton_rapson();
+        void newton_rapson( double x_previo, int iteraciones );
+        
 
 };
 

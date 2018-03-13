@@ -47,6 +47,14 @@ void Metodos::biseccion( double a, double b, int particiones, double delta, doub
 };
 
 
-void Metodos::newton_rapson(){
-
+void Metodos::newton_rapson( double x_previo, int iteraciones ){
+    cout << "Raiz: " << x_previo << " Iteración: " << iteraciones - 1 << endl;
+    double funcion_evaluada = ( x_previo * x_previo ) - 5; // Función evaluada en x² - 5
+    if( iteraciones == 0 ){
+        return;
+    }else{
+        double derivada_evaluada = (2 * x_previo); // Derivada 2x
+        double resultado_iteracion = x_previo - ( funcion_evaluada / derivada_evaluada );
+        newton_rapson( resultado_iteracion, iteraciones - 1 );
+    }
 };
